@@ -1,0 +1,30 @@
+{
+  "name": "event-manifest",
+  "version": "0.0.0",
+  "description": "Describe a message structure",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index.js | tap-spec"
+  },
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nichoth/event-manifest.git"
+  },
+  "keywords": [
+    "event",
+    "mux",
+    "demux",
+    "manifest",
+    "serialize"
+  ],
+  "author": "nichoth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nichoth/event-manifest/issues"
+  },
+  "homepage": "https://github.com/nichoth/event-manifest#readme"
+}
