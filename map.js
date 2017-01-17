@@ -1,3 +1,5 @@
+var Event = require('./event')
+
 var map = {
     categories: {
         update: function () {},
@@ -13,6 +15,24 @@ var manifest = [
     ['categories', ['update', 'del']],
     ['keywords', ['update', 'delete']]
 ]
+
+var oneEvent = ['categories', ['update', { id: '123' }]]
+
+function handleEvent (handlers, ev) {
+    var type = Event.type(ev)
+    if (typeof handlers[type] === 'function') {
+        return handlers[type](Event.data(ev))
+    }
+    if (typeof handlers[type] === 'object') {
+        return handleEvent(handlers[type], Event.data(ev))
+    }
+    throw new Error('invalid event ' + JSON.stringify(ev))
+}
+
+handleEvent(map, oneEvent) // this is ok
+
+// this is bad
+// handleEvent(map, ['categories', ['bad method', { id: '123' }]])
 
 var m = Object.keys(map).map(function (k) {
     return {
