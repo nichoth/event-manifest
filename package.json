@@ -1,6 +1,6 @@
 {
   "name": "event-manifest",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Describe a message structure",
   "main": "index.js",
   "scripts": {
